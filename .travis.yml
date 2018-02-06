@@ -22,6 +22,7 @@ before_script:
 cache:
   directories:
   - $HOME/CACHE
+install: mvn clean install -DskipTests
 script:
 - touch /tmp/NOW
 - echo GIBSTUDYSTART $(date)
