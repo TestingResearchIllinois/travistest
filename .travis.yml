@@ -1,4 +1,4 @@
 before_install: echo "BEFORE INSTALL"
 before_script: echo "BEFORE SCRIPT"
-script: echo "TRAVIS RANGE="${TRAVIS_COMMIT_RANGE}; env
+script: echo "TRAVIS RANGE="${TRAVIS_COMMIT_RANGE}; env; mvn test
 after_success: echo "SUCCESS"
