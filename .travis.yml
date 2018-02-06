@@ -1,2 +1,3 @@
+before_script: echo "BEFORE SCRIPT"
 script: echo "TRAVIS RANGE="${TRAVIS_COMMIT_RANGE}; env
 after_success: echo "SUCCESS"
