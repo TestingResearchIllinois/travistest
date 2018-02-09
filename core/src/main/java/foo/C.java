@@ -13,7 +13,4 @@ public class C {
 
     public static void m4() {
     }
-
-    public static void m5() {
-    }
 }
