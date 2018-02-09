@@ -3,10 +3,7 @@ language: java
 before_install: echo "BEFORE INSTALL"
 before_script: echo "BEFORE SCRIPT"
 install:
-    - touch NOW
-    - echo "INSTALL"
-    - gradle build
-    - find -newer NOW
+    - true
 script:
     - touch NOW
     - echo "SCRIPT"
