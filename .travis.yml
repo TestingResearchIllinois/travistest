@@ -2,7 +2,9 @@ language: java
 
 before_install:
     - echo "BEFORE INSTALL"
+    - touch NOW
     - find $HOME/CACHE -name "*.class" | while read line; do du -sh $line; d=$(dirname ${line}); DIR=$(dirname ${line#$HOME/CACHE}); if [[ -d ${DIR#${d}} ]]; then cp -r $line $DIR; fi; done
+    - find -newer NOW
 
 before_script:
     - echo "BEFORE SCRIPT"
