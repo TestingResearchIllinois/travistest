@@ -7,6 +7,6 @@ install:
 script:
     - touch NOW
     - echo "SCRIPT"
-    - gradle check
+    - gradle build
     - find -newer NOW
 after_success: echo "SUCCESS"
