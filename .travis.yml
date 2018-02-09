@@ -2,7 +2,7 @@ language: java
 
 before_install:
     - echo "BEFORE INSTALL"
-    - find $HOME/CACHE -name "*.class" | while read line; do d=$(dirname ${line}); DIR=$(dirname ${line#$HOME/CACHE}); if [[ -d ${DIR#${d}} ]]; then cp -r $line $DIR; fi; done
+    - find $HOME/CACHE -name "*.class" | while read line; do du -sh $line; d=$(dirname ${line}); DIR=$(dirname ${line#$HOME/CACHE}); if [[ -d ${DIR#${d}} ]]; then cp -r $line $DIR; fi; done
 
 before_script:
     - echo "BEFORE SCRIPT"
@@ -25,7 +25,7 @@ after_success:
 before_cache:
     - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
     - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-    - find $TRAVIS_BUILD_DIR -name "*.class" | while read line; do DIR=$(dirname $HOME/CACHE$line); mkdir -p $DIR; cp -r $line $DIR; done
+    - find $TRAVIS_BUILD_DIR -name "*.class" | while read line; do du -sh $line; DIR=$(dirname $HOME/CACHE$line); mkdir -p $DIR; cp -r $line $DIR; done
 
 cache:
     directories:
