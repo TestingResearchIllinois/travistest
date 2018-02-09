@@ -5,7 +5,7 @@ before_script: echo "BEFORE SCRIPT"
 install:
     - touch NOW
     - echo "INSTALL"
-    - gradle assemble
+    - gradle build
     - find -newer NOW
 script:
     - touch NOW
