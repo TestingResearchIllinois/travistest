@@ -1,5 +1,13 @@
 before_install: echo "BEFORE INSTALL"
 before_script: echo "BEFORE SCRIPT"
-install: mvn clean install -DskipTests
-script: echo "TRAVIS RANGE="${TRAVIS_COMMIT_RANGE}; env; echo ${SECRET}
+install:
+    - touch NOW
+    - echo "INSTALL"
+    - gradle assemble
+    - find -newer NOW
+script:
+    - touch NOW
+    - echo "SCRIPT"
+    - gradle check
+    - find -newer NOW
 after_success: echo "SUCCESS"
