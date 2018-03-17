@@ -24,6 +24,7 @@ script:
     - find -newer NOW
     - echo SCRIPT $(date) > $HOME/CACHE/cache
     - faillll
+    - echo FAILING?
 
 after_success:
     - echo "SUCCESS"
