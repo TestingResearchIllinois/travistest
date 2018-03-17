@@ -21,6 +21,7 @@ script:
     - touch NOW
     - gradle check
     - find -newer NOW
+    - echo SCRIPT $(date)
 
 after_success:
     - echo "SUCCESS"
