@@ -28,6 +28,12 @@ script:
 
 after_success:
     - echo "SUCCESS"
+    
+after_failure:
+    - echo "FAILURE"
+
+after_script:
+    - echo "after_script"
 
 before_cache:
     - faillllllll
