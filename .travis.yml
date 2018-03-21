@@ -50,7 +50,6 @@ notification:
         - pzhao12@illinois.edu
 
 matrix:
-    include:
-        - script:
-            - echo "JOB SCRIPT"
+    - script:
+        - echo "JOB SCRIPT"
 
