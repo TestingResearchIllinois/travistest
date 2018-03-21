@@ -48,5 +48,5 @@ cache:
         - $HOME/.gradle/wrapper/
         - $HOME/CACHE
 
-notification:
+notifications:
     - pzhao12@illinois.edu
