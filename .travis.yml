@@ -49,4 +49,5 @@ cache:
         - $HOME/CACHE
 
 notifications:
-    - pzhao12@illinois.edu
+    email:
+        - pzhao12@illinois.edu
