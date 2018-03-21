@@ -53,6 +53,7 @@ matrix:
     include:
         - script:
           - echo "JOB SCRIPT"
-          jdk: 
-          - oraclejdk7
-          - oraclejdk8
+          - echo $FOO;echo $BAR
+          env:
+          - FOO=foooo
+          - BAR=barrr
