@@ -52,5 +52,5 @@ notification:
 matrix:
     include:
         - script:
-            - echo "JOB SCRIPT"
-          jdk:openjdk7
+          - echo "JOB SCRIPT"
+          jdk: oraclejdk7
