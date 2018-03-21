@@ -52,4 +52,5 @@ notification:
 matrix:
     - script:
         - echo "JOB SCRIPT"
-
+    - script:
+        - echo "JOB SCRIPT 2"
