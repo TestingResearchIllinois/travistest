@@ -50,7 +50,7 @@ notification:
         - pzhao12@illinois.edu
 
 matrix:
-    - script:
-        - echo "JOB SCRIPT"
-    - script:
-        - echo "JOB SCRIPT 2"
+    include:
+        - script:
+            - echo "JOB SCRIPT"
+          jdk:openjdk7
