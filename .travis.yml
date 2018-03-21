@@ -53,4 +53,5 @@ matrix:
     include:
         - script:
           - echo "JOB SCRIPT"
-          jdk: oraclejdk7
+          jdk: 
+          - oraclejdk7
