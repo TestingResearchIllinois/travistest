@@ -55,3 +55,4 @@ matrix:
           - echo "JOB SCRIPT"
           jdk: 
           - oraclejdk7
+          - oraclejdk8
