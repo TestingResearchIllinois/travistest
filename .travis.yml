@@ -48,6 +48,6 @@ cache:
         - $HOME/.gradle/wrapper/
         - $HOME/CACHE
 
-notifications:
+notification:
     email:
         - pzhao12@illinois.edu
