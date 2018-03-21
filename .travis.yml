@@ -47,3 +47,6 @@ cache:
         - $HOME/.gradle/caches/
         - $HOME/.gradle/wrapper/
         - $HOME/CACHE
+
+notifaction:
+    - pzhao12@illinois.edu
