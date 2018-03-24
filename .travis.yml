@@ -23,10 +23,10 @@ cache:
   directories:
   - $HOME/CACHE
 install: mvn clean install -DskipTests
-script:
-- touch /tmp/NOW
-- echo GIBSTUDYSTART $(date)
-- echo "TRAVIS RANGE="${TRAVIS_COMMIT_RANGE}; env; mvn test
-- echo GIBSTUDYEND $(date)
-- cd $TRAVIS_BUILD_DIR
-- echo TESTNUM $(find . -name TEST-*.xml -newer /tmp/NOW | wc -l)
+
+matrix:
+  include:
+    - script: echo asdf
+      install: true
+    - script: echo dfsa
+      install: true
