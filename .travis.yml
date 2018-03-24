@@ -23,6 +23,7 @@ script:
     - gradle check
     - find -newer NOW
     - echo SCRIPT $(date) > $HOME/CACHE/cache
+    - faillll
 
 after_success:
     - echo "SUCCESS"
