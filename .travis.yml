@@ -28,5 +28,5 @@ matrix:
   include:
     - script: echo asdf
       install: true
-    - script: echo dfsa
+    - script: echo dfsa;failllll
       install: true
