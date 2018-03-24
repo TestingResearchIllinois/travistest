@@ -16,7 +16,6 @@ install:
     - touch NOW
     - gradle assemble
     - find -newer NOW
-    - failllll
 
 script:
     - echo "SCRIPT"
