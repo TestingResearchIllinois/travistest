@@ -46,16 +46,4 @@ cache:
     directories:
         - $HOME/.gradle/caches/
         - $HOME/.gradle/wrapper/
-        - $HOME/CACHE
-
-notification:
-    email:
-        - pzhao12@illinois.edu
-
-matrix:
-    include:
-        - script:
-          - echo "JOB SCRIPT"
-          - echo $FOO
-          env:
-          - FOO=foooo
+        - $HOME/CACHE\
