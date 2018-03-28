@@ -17,8 +17,6 @@ install:
     - touch NOW
     - gradle assemble
     - find -newer NOW
-    - echo INSTALL $(date) > $HOME/CACHE/cache
-    - failll
 
 script:
     - echo "SCRIPT"
@@ -39,6 +37,7 @@ after_script:
 
 before_cache:
     - echo BEFORE_CACHE
+    - failll
     - echo $TRAVIS_TEST_RESULT
     - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
     - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
