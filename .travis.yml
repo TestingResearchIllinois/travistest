@@ -12,7 +12,6 @@ before_script:
     - echo "BEFORE SCRIPT"
     
 install:
-    - cat $HOME/CACHE/cache
     - echo "INSTALL"
     - touch NOW
     - gradle assemble
