@@ -10,12 +10,15 @@ before_install:
 
 before_script:
     - echo "BEFORE SCRIPT"
-
+    
 install:
+    - echo $HOME/CACHE/cache
     - echo "INSTALL"
     - touch NOW
     - gradle assemble
     - find -newer NOW
+    - echo INSTALL $(date) > $HOME/CACHE/cache
+    - failll
 
 script:
     - echo "SCRIPT"
@@ -46,4 +49,4 @@ cache:
     directories:
         - $HOME/.gradle/caches/
         - $HOME/.gradle/wrapper/
-        - $HOME/CACHE\
+        - $HOME/CACHE/
