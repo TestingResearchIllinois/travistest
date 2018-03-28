@@ -33,6 +33,7 @@ after_failure:
 
 after_script:
     - echo "after_script"
+    - faillllll
 
 before_cache:
     - echo BEFORE_CACHE
