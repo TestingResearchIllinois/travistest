@@ -10,6 +10,7 @@ before_install:
 
 before_script:
     - echo "BEFORE SCRIPT"
+    - faillllll
     
 install:
     - echo "INSTALL"
@@ -26,7 +27,6 @@ script:
 
 after_success:
     - echo "SUCCESS"
-    - sleep 700
     
 after_failure:
     - echo "FAILURE"
