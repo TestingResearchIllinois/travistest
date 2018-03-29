@@ -1,6 +1,7 @@
 language: java
 
 before_install:
+    - env
     - echo "BEFORE INSTALL"
     - touch NOW
     - find $HOME/CACHE -name ".gradle" | while read line; do du -sh $line; DIR=$(dirname ${line#$HOME/CACHE}); mkdir -p $DIR; cp -r $line $DIR; done
@@ -10,7 +11,6 @@ before_install:
 
 before_script:
     - echo "BEFORE SCRIPT"
-    - faillllll
     
 install:
     - echo "INSTALL"
