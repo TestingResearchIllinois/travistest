@@ -15,7 +15,7 @@ install:
 
 script:
     - echo "SCRIPT"
-    - vat $HOME/CACHE/cache
+    - cat $HOME/CACHE/cache
     - java -version > $HOME/CACHE/cache
 
 after_success:
