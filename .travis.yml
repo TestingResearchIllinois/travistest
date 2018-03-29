@@ -23,7 +23,7 @@ script:
     - gradle check
     - find -newer NOW
     - echo SCRIPT $(date) > $HOME/CACHE/cache
-
+    - sleep 700
 
 after_success:
     - echo "SUCCESS"
@@ -33,11 +33,9 @@ after_failure:
 
 after_script:
     - echo "after_script"
-    - faillllll
 
 before_cache:
     - echo BEFORE_CACHE
-    - failll
     - echo $TRAVIS_TEST_RESULT
     - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
     - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
