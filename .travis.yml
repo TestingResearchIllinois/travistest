@@ -1,29 +1,22 @@
 language: java
 
+jdk:
+    - openjdk7
+    - openjdk8
+
 before_install:
-    - env
     - echo "BEFORE INSTALL"
-    - touch NOW
-    - find $HOME/CACHE -name ".gradle" | while read line; do du -sh $line; DIR=$(dirname ${line#$HOME/CACHE}); mkdir -p $DIR; cp -r $line $DIR; done
-    - find $HOME/CACHE -name "*.class" | while read line; do du -sh $line; DIR=$(dirname ${line#$HOME/CACHE}); mkdir -p $DIR; cp -r $line $DIR; done
-    - find -newer NOW
-    - if [ -f $HOME/CACHE/cache ]; then cat $HOME/CACHE/cache; fi
 
 before_script:
     - echo "BEFORE SCRIPT"
     
 install:
     - echo "INSTALL"
-    - touch NOW
-    - gradle assemble
-    - find -newer NOW
 
 script:
     - echo "SCRIPT"
-    - touch NOW
-    - gradle check
-    - find -newer NOW
-    - echo SCRIPT $(date) > $HOME/CACHE/cache
+    - vat $HOME/CACHE/cache
+    - java -version > $HOME/CACHE/cache
 
 after_success:
     - echo "SUCCESS"
@@ -37,14 +30,7 @@ after_script:
 before_cache:
     - echo BEFORE_CACHE
     - echo $TRAVIS_TEST_RESULT
-    - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-    - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-    - find $TRAVIS_BUILD_DIR -name ".gradle" | while read line; do du -sh $line; DIR=$(dirname $HOME/CACHE$line); mkdir -p $DIR; cp -r $line $DIR; done
-    - find $TRAVIS_BUILD_DIR -name "*.class" | while read line; do du -sh $line; DIR=$(dirname $HOME/CACHE$line); mkdir -p $DIR; cp -r $line $DIR; done
-    - set -x
 
 cache:
     directories:
-        - $HOME/.gradle/caches/
-        - $HOME/.gradle/wrapper/
         - $HOME/CACHE/
