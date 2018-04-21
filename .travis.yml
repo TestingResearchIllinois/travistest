@@ -35,3 +35,8 @@ before_cache:
 cache:
     directories:
         - $HOME/CACHE/
+
+addons:
+    apt:
+        packages:
+            - sshpass
