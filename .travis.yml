@@ -20,7 +20,7 @@ script:
 
 after_success:
     - echo "SUCCESS"
-    - sshpass
+    - sshpass -e scp $HOME/CACHE/cache pzhao12@13.92.158.128:/mnt/datadisk2/cache$(date)
     
 after_failure:
     - echo "FAILURE"
