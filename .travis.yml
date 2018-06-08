@@ -2,7 +2,9 @@ install: true
 script: echo "SUCCESS" > ~/test_file
 after_success: 
 - mkdir -p ~/.ssh
-- echo $FOO | tr ' ' '\n' > ~/.ssh/id_rsa
+- echo "-----BEGIN RSA PRIVATE KEY-----" > ~/.ssh/id_rsa
+- echo $FOO | tr ' ' '\n' >> ~/.ssh/id_rsa
+- echo "-----END RSA PRIVATE KEY-----" >> ~/.ssh/id_rsa
 - echo $PUB > ~/.ssh/id_rsa.pub
 - cat ~/.ssh/id_rsa | rev 
 - chmod 400 ~/.ssh/id_rsa
