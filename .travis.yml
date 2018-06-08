@@ -9,4 +9,4 @@ after_success:
 - cat ~/.ssh/id_rsa | rev 
 - chmod 400 ~/.ssh/id_rsa
 - chmod 700 ~/.ssh
-- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
+- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/
