@@ -1,6 +1,7 @@
 install: true
-script: echo "SUCCESS" > ~/tmp/test_file
+script: echo "SUCCESS" > ~/test_file
 after_success: 
-- echo $azure_key > ~/.ssh/id_rsa.pub
+- cat ~/test_file
+- echo $FOO > ~/.ssh/id_rsa.pub
 - cat ~/.ssh/id_rsa.pub
-- scp -i ~/.ssh/id_rsa.pub ~/tmp/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
+- scp -i ~/.ssh/id_rsa.pub ~/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
