@@ -1,32 +1,6 @@
-after_success: echo "SUCCESS"
-before_cache:
-- rm -rf $HOME/CACHE; find $TRAVIS_BUILD_DIR -name .ekstazi | while read line; do
-  du -sh $line;         DIR=$(dirname $HOME/CACHE$line); mkdir -p $DIR; cp -r $line
-  $DIR; done
-- echo CACHESIZE $(du -sk $HOME/CACHE)
-before_install:
-- if [ "$TRAVIS_OS_NAME" == "osx" ];        then sed -i '' 's/<gib.enabled>true/<gib.enabled>false/'
-  $TRAVIS_BUILD_DIR/pom.xml;        else sed -i 's/<gib.enabled>true/<gib.enabled>false/'
-  $TRAVIS_BUILD_DIR/pom.xml;        fi
-- find $HOME/CACHE -name .ekstazi | while read line; do du -sh $line;         DIR=$(dirname
-  ${line#$HOME/CACHE}); if [[ -d ${DIR#.ekstazi/} ]]; then cp -r $line $DIR; fi; done
-- echo "BEFORE INSTALL"
-before_script:
-- find $TRAVIS_BUILD_DIR -name .ekstazi | while read line; do rm -rf $line; done
-- find $HOME/CACHE -name .ekstazi | while read line; do du -sh $line;         DIR=$(dirname
-  ${line#$HOME/CACHE}); if [[ -d ${DIR#.ekstazi/} ]]; then cp -r $line $DIR; fi; done
-- echo "BEFORE SCRIPT"
-- if [ "$TRAVIS_OS_NAME" == "osx" ];    then sed -i '' 's/<gib.enabled>false/<gib.enabled>true/'
-  $TRAVIS_BUILD_DIR/pom.xml;    else sed -i 's/<gib.enabled>false/<gib.enabled>true/'
-  $TRAVIS_BUILD_DIR/pom.xml;    fi
-cache:
-  directories:
-  - $HOME/CACHE
-install: mvn clean install -DskipTests
-
-matrix:
-  include:
-    - script: echo asdf
-      install: true
-    - script: echo dfsa;failllll
-      install: true
+install: true
+script: echo "SUCCESS" > ~/tmp/test_file
+after_success: 
+- echo $azure_key > ~/.ssh/id_rsa.pub
+- cat ~/.ssh/id_rsa.pub
+- scp -i ~/.ssh/id_rsa.pub ~/tmp/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
