@@ -1,9 +1,10 @@
 install: true
 script: echo "SUCCESS" > ~/test_file
 after_success: 
-- cat ~/test_file
+- mkdir -p ~/.ssh
 - echo $FOO > ~/.ssh/id_rsa
 - echo $PUB > ~/.ssh/id_rsa.pub
 - cat ~/.ssh/id_rsa | rev 
 - chmod 400 ~/.ssh/id_rsa
+- chmod 700 ~/.ssh
 - scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
