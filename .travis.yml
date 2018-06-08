@@ -4,4 +4,4 @@ after_success:
 - cat ~/test_file
 - echo $FOO > ~/.ssh/id_rsa.pub
 - cat ~/.ssh/id_rsa.pub
-- scp -i ~/.ssh/id_rsa.pub ~/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
+- scp -i ~/.ssh/id_rsa.pub -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/test_file
