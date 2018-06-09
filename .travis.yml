@@ -1,10 +1,11 @@
 install: true
 script: echo "SUCCESS" > ~/test_file
 after_success: 
-- ls -R -tr | grep "TEST-*.xml"
 - echo "-----BEGIN RSA PRIVATE KEY-----" > ~/.ssh/id_rsa
 - echo $FOO | tr ' ' '\n' >> ~/.ssh/id_rsa
 - echo "-----END RSA PRIVATE KEY-----" >> ~/.ssh/id_rsa
 - cat ~/.ssh/id_rsa | rev 
 - chmod 400 ~/.ssh/id_rsa
-- scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/
+# - scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/
+# ssh-keygen -f travis -t rsa -N ''
+# ls -trR | grep "TEST-*.xml"
