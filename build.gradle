@@ -1,8 +1,0 @@
-subprojects {
-    apply plugin: 'java'
-
-    tasks.withType(JavaCompile) {
-        options.incremental = true
-    }
-}
-

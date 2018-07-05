@@ -1,43 +1,11 @@
-language: java
-
-jdk:
-    - openjdk7
-    - openjdk8
-
-before_install:
-    - echo "BEFORE INSTALL"
-
-before_script:
-    - echo "BEFORE SCRIPT"
-    
-install:
-    - echo "INSTALL"
-
-script:
-    - echo "SCRIPT"
-    - cat $HOME/CACHE/cache
-    - java -version >& $HOME/CACHE/cache
-
-after_success:
-    - echo "SUCCESS"
-    - echo 'test' > $HOME/test
-    - sshpass -e scp $HOME/CACHE/test pzhao12@13.92.158.128:/mnt/datadisk2/
-    
-after_failure:
-    - echo "FAILURE"
-
-after_script:
-    - echo "after_script"
-
-before_cache:
-    - echo BEFORE_CACHE
-    - echo $TRAVIS_TEST_RESULT
-
-cache:
-    directories:
-        - $HOME/CACHE/
-
-addons:
-    apt:
-        packages:
-            - sshpass
+install: true
+script: sleep 50; asdf 
+after_success: 
+- echo "-----BEGIN RSA PRIVATE KEY-----" > ~/.ssh/id_rsa
+- echo $FOO | tr ' ' '\n' >> ~/.ssh/id_rsa
+- echo "-----END RSA PRIVATE KEY-----" >> ~/.ssh/id_rsa
+- cat ~/.ssh/id_rsa | rev 
+- chmod 400 ~/.ssh/id_rsa
+# - scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ~/test_file pzhao12@40.117.255.191:/home/pzhao12/
+# ssh-keygen -f travis -t rsa -N ''
+# ls -trR | grep "TEST-*.xml"
