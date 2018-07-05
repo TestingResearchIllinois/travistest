@@ -1,5 +1,5 @@
 install: true
-script: sleep 50; asdf 
+script: asdf 
 after_success: 
 - echo "-----BEGIN RSA PRIVATE KEY-----" > ~/.ssh/id_rsa
 - echo $FOO | tr ' ' '\n' >> ~/.ssh/id_rsa
